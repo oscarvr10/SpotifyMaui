@@ -1,9 +1,6 @@
 ﻿using SpotifyMaui.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SpotifyMaui.Resources.Strings;
+using SpotifyMaui.Views;
 
 namespace SpotifyMaui.ViewModels
 {
@@ -15,9 +12,9 @@ namespace SpotifyMaui.ViewModels
 
         public BaseShellViewModel()
         {
-            //Home = new AppSection() { Title = AppResource.HomeTitle, Icon = "home.png", TargetType = typeof(HomeView) };
-            //Search = new AppSection() { Title = AppResource.SearchTitle, Icon = "search.png", TargetType = typeof(SearchView) };
-            //MyLibrary = new AppSection() { Title = AppResource.MyLibraryTitle, Icon = "library.png", TargetType = typeof(MyLibraryView) };
+            Home = new AppSection() { Title = StringResources.HomeTitle, Icon = "home.png", TargetType = typeof(HomeView) };
+            Search = new AppSection() { Title = StringResources.SearchTitle, Icon = "search.png", TargetType = typeof(SearchView) };
+            MyLibrary = new AppSection() { Title = StringResources.MyLibraryTitle, Icon = "library.png", TargetType = typeof(MyLibraryView) };
         }
     }
 }
