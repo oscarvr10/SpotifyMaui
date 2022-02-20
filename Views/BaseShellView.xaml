@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
+       xmlns:views="clr-namespace:SpotifyMaui.Views"
+       x:DataType="viewmodels:BaseShellViewModel"
+       x:Class="SpotifyMaui.Views.BaseShellView">
+    <TabBar>
+        <Tab Title="{Binding Home.Title}"
+             Icon="{Binding Home.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" />
+        </Tab>
+        <Tab Title="{Binding Search.Title}"
+             Icon="{Binding Search.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate views:SearchView}" />
+        </Tab>
+        <Tab Title="{Binding MyLibrary.Title}"
+             Icon="{Binding Search.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate views:MyLibraryView}" />
+        </Tab>
+    </TabBar>
+</Shell>
