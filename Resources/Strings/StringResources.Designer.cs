@@ -79,7 +79,7 @@ namespace SpotifyMaui.Resources.Strings {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Saerch.
+        ///   Busca una cadena traducida similar a Search.
         /// </summary>
         internal static string SearchTitle {
             get {
