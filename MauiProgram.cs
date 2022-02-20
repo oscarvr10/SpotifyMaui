@@ -9,7 +9,9 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+				fonts.AddFont("circular-bold.ttf", "CircularSpotifyTxT-Bold");
+				fonts.AddFont("circular-book.ttf", "CircularSpotifyTxT-Book");
+				fonts.AddFont("circular-medium.ttf", "CircularSpotifyTxT-Med");
 			});
 
 		return builder.Build();

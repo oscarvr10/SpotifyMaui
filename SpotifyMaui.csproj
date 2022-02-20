@@ -53,6 +53,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\circular-bold.ttf" />
+	  <None Remove="Resources\Fonts\circular-book.ttf" />
+	  <None Remove="Resources\Fonts\circular-medium.ttf" />
+	  <None Remove="Resources\Images\home.svg" />
+	  <None Remove="Resources\Images\library.svg" />
+	  <None Remove="Resources\Images\search.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Utils\Controls\" />
 	  <Folder Include="Utils\Converters\" />
 	  <Folder Include="Views\Templates\" />
