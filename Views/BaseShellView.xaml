@@ -5,6 +5,9 @@
        xmlns:views="clr-namespace:SpotifyMaui.Views"
        x:DataType="viewmodels:BaseShellViewModel"
        x:Class="SpotifyMaui.Views.BaseShellView">
+    <Shell.BindingContext>
+        <viewmodels:BaseShellViewModel />
+    </Shell.BindingContext>
     <TabBar>
         <Tab Title="{Binding Home.Title}"
              Icon="{Binding Home.Icon}">

@@ -1,4 +1,6 @@
-﻿namespace SpotifyMaui;
+﻿using SpotifyMaui.Views;
+
+namespace SpotifyMaui;
 
 public partial class App : Application
 {
@@ -6,6 +8,11 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new MainPage();
+		MainPage = new BaseShellView();
+
+		Routing.RegisterRoute(nameof(HomeView), typeof(HomeView));
+		Routing.RegisterRoute(nameof(SearchView), typeof(SearchView));
+		Routing.RegisterRoute(nameof(MyLibraryView), typeof(MyLibraryView));
+
 	}
 }
