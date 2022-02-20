@@ -9,13 +9,13 @@
         <viewmodels:BaseShellViewModel />
     </Shell.BindingContext>
     <TabBar>
-        <Tab Title="{Binding Home.Title}">
+        <Tab Title="{Binding Home.Title}" Icon="{Binding Home.Icon}">
             <ShellContent ContentTemplate="{DataTemplate views:HomeView}" />
         </Tab>
-        <Tab Title="{Binding Search.Title}">
+        <Tab Title="{Binding Search.Title}" Icon="{Binding Search.Icon}">
             <ShellContent ContentTemplate="{DataTemplate views:SearchView}" />
         </Tab>
-        <Tab Title="{Binding MyLibrary.Title}">
+        <Tab Title="{Binding MyLibrary.Title}" Icon="{Binding MyLibrary.Icon}">
             <ShellContent ContentTemplate="{DataTemplate views:MyLibraryView}" />
         </Tab>
     </TabBar>

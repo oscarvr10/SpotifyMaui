@@ -8,15 +8,26 @@
             <Color x:Key="PrimaryColor">#512bdf</Color>
             <Color x:Key="SecondaryColor">White</Color>
 
+            <Style x:Key="BaseStyle"  TargetType="Element">                
+                <Setter Property="Shell.TitleColor"
+                        Value="White" />
+                <Setter Property="Shell.BackgroundColor"
+                        Value="Black" />
+                <Setter Property="Shell.NavBarIsVisible"
+                        Value="False" />
+                <Setter Property="Shell.UnselectedColor"
+                        Value="LightGrey" />
+            </Style>
+
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
-                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Med" />
             </Style>
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
-                <Setter Property="FontFamily" Value="OpenSansRegular" />
-                <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Me" />
                 <Setter Property="Padding" Value="14,10" />
             </Style>
 
