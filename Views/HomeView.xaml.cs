@@ -1,5 +1,3 @@
-using SpotifyMaui.ViewModels;
-
 namespace SpotifyMaui.Views;
 
 public partial class HomeView : ContentPage

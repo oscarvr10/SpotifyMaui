@@ -13,6 +13,5 @@ public partial class App : Application
 		Routing.RegisterRoute(nameof(HomeView), typeof(HomeView));
 		Routing.RegisterRoute(nameof(SearchView), typeof(SearchView));
 		Routing.RegisterRoute(nameof(MyLibraryView), typeof(MyLibraryView));
-
 	}
 }
