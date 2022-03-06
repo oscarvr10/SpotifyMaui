@@ -5,14 +5,20 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <Color x:Key="PrimaryColor">#512bdf</Color>
-            <Color x:Key="SecondaryColor">White</Color>
+            <Color x:Key="BlackColor">#131313</Color>
+            <Color x:Key="GrayColor">#292929</Color>
+            <Color x:Key="SemiLightGrayColor">#979797</Color>
+            <Color x:Key="LightGrayColor">#bdbdbd</Color>
+            <Color x:Key="WhiteColor">#f0f0f0</Color>
+            <Color x:Key="DarkRedColor">#4d342f</Color>
+            <Color x:Key="DarkGrayColor">#282627</Color>          
+
 
             <Style x:Key="BaseStyle"  TargetType="Element">                
                 <Setter Property="Shell.TitleColor"
                         Value="White" />
                 <Setter Property="Shell.BackgroundColor"
-                        Value="Black" />
+                        Value="#131313" />
                 <Setter Property="Shell.NavBarIsVisible"
                         Value="False" />
                 <Setter Property="Shell.UnselectedColor"
@@ -20,15 +26,29 @@
             </Style>
 
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
-            
-            <Style TargetType="Label">
+
+            <Style x:Key="BaseLabel" TargetType="Label">
                 <Setter Property="FontFamily" Value="CircularSpotifyTxT-Med" />
             </Style>
 
-            <Style TargetType="Button">
-                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
-                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Me" />
-                <Setter Property="Padding" Value="14,10" />
+            <Style x:Key="HeaderLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+            <Style x:Key="TitleLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+            <Style x:Key="GrayContentLabel"  BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource SemiLightGrayColor}" />
+            </Style>
+            <Style x:Key="WhiteContentLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
 
         </ResourceDictionary>

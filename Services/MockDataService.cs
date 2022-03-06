@@ -75,5 +75,42 @@ namespace SpotifyMaui.Services
                 new MusicCategory(){ Name="Electronic/Dance", StartColor = Colors.LightSkyBlue, EndColor=Colors.LightSeaGreen},
             };
         }
+
+        public static List<Recent> GetRecents()
+        {
+            return new List<Recent>
+            {
+                new Recent
+                {
+                    Description = "Novedades Viernes MX",
+                    PathImage = "https://i.scdn.co/image/ab67706f000000029956e277ef723dffb90a19ec"
+                },
+                new Recent
+                {
+                    Description = "The Weeknd",
+                    PathImage = "https://i.scdn.co/image/ab67616d000048514ab2520c2c77a1d66b9ee21d"
+                },                
+                new Recent
+                {
+                    Description = "Random Access Memories",
+                    PathImage = "https://i.scdn.co/image/ab67616d000048511d97ca7376f835055f828139"
+                },
+                new Recent
+                {
+                    Description = "The Slow Rush",
+                    PathImage = "https://i.scdn.co/image/ab67616d0000485122b9cdd0c4ce8cee5857f6a4"
+                },
+                new Recent
+                {
+                    Description = "Shining Of Your Soul",
+                    PathImage = "https://i.scdn.co/image/ab67616d00004851d031fbded1551464f5d6310e"
+                },
+                new Recent
+                {
+                    Description = "X&Y",
+                    PathImage = "https://i.scdn.co/image/ab67616d000048514e0362c225863f6ae2432651"
+                }
+            };
+        }
     }
 }
