@@ -38,6 +38,17 @@ namespace SpotifyMaui.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        List<Playlist> _playlists;
+        public List<Playlist> Playlists
+        {
+            get { return _playlists; }
+            set
+            {
+                _playlists = value;
+                OnPropertyChanged();
+            }
+        }
         public HomeViewModel()
         {
             InitData();
@@ -48,6 +59,7 @@ namespace SpotifyMaui.ViewModels
             Recents = MockDataService.GetRecents();
             Albums = MockDataService.GetAlbums();
             Songs = MockDataService.GetSongs();
+            Playlists = MockDataService.GetPlaylists();
         }
     }
 }

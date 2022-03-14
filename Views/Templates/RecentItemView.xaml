@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="SpotifyMaui.Views.Templates.RecentItemView">
+    <Frame BackgroundColor="{StaticResource DarkGrayColor}"
+           CornerRadius="4"
+           Padding="0">
+        <StackLayout Orientation="Horizontal"
+                     Spacing="8">
+            <Image Source="{Binding PathImage}"
+                   WidthRequest="58"
+                   HeightRequest="58"/>
+            <Label Text="{Binding Description}"
+                   Style="{StaticResource TitleLabel}"
+                   LineBreakMode="WordWrap"
+                   WidthRequest="90"
+                   MaxLines="2"          
+                   VerticalOptions="Center"/>
+        </StackLayout>
+    </Frame>
+</Grid>

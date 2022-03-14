@@ -64,7 +64,6 @@
 	<ItemGroup>
 	  <Folder Include="Utils\Controls\" />
 	  <Folder Include="Utils\Converters\" />
-	  <Folder Include="Views\Templates\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -72,6 +71,18 @@
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>StringResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Templates\AlbumItemView.xaml.cs">
+	    <DependentUpon>AlbumItemView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Templates\PlaylistItemView.xaml.cs">
+	    <DependentUpon>PlaylistItemView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Templates\RecentItemView.xaml.cs">
+	    <DependentUpon>RecentItemView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Templates\SongItemView.xaml.cs">
+	    <DependentUpon>SongItemView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -93,6 +104,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SearchView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Templates\AlbumItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Templates\PlaylistItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Templates\SongItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

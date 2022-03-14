@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
+             xmlns:templates="clr-namespace:SpotifyMaui.Views.Templates"
              x:Class="SpotifyMaui.Views.HomeView">
     
     <ContentPage.BindingContext>
@@ -15,16 +16,19 @@
                            HeightRequest="140"
                            HorizontalOptions="FillAndExpand"
                            BorderColor="{StaticResource BlackColor}"
+                           Background="brown"
                            HasShadow="True">
-                        <Frame.Background>
-                            <LinearGradientBrush EndPoint="0,1">
-                                <GradientStop Color="#442f2c" Offset="0.1"/>
-                                <GradientStop Color="{StaticResource BlackColor}" Offset="1.0"/>
+                        <!--<Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#98615c" Offset="0.0"/>
+                                <GradientStop Color="#553834" Offset="0.1"/>
+                                <GradientStop Color="#271b1b" Offset="0.75"/>
+                                <GradientStop Color="#110f10" Offset="1.0"/>
                             </LinearGradientBrush>
-                        </Frame.Background>
+                        </Frame.Background>-->
                     </Frame>
                 </Grid>
-                <StackLayout Margin="0,60,0,0"
+                <StackLayout Margin="0,50,0,0"
                              Padding="16,0"
                              Spacing="16">
                     <Grid ColumnDefinitions="*,*">
@@ -34,11 +38,11 @@
                                      VerticalOptions="Start"
                                      Orientation="Horizontal"
                                      Spacing="20"
-                                     Margin="0,4,40,0"
+                                     Margin="0,4,32,0"
                                      HorizontalOptions="End">
                             <Image Source="home.png"/>
-                            <Image Source="search.png"/>
-                            <Image Source="library.png"/>
+                            <Image Source="settings.png"/>
+                            <Image Source="settings.png"/>
                         </StackLayout>
                     </Grid>
                     <CollectionView ItemsSource="{Binding Recents}">
@@ -50,26 +54,11 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame BackgroundColor="{StaticResource DarkGrayColor}"
-                                       CornerRadius="4"
-                                       Padding="0">
-                                    <StackLayout Orientation="Horizontal"
-                                                 Spacing="8">
-                                        <Image Source="{Binding PathImage}"
-                                               WidthRequest="58"
-                                               HeightRequest="58"/>
-                                        <Label Text="{Binding Description}"
-                                               Style="{StaticResource TitleLabel}"
-                                               LineBreakMode="WordWrap"
-                                               WidthRequest="90"
-                                               MaxLines="2"          
-                                               VerticalOptions="Center"/>
-                                    </StackLayout>
-                                </Frame>
+                                <templates:RecentItemView/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <!--<StackLayout Orientation="Horizontal" 
+                    <StackLayout Orientation="Horizontal" 
                                  Spacing="8"
                                  Margin="0,24,0,12">
                         <Image Source="https://i.scdn.co/image/ab6761610000f1787440170c0628c2945da819c3">
@@ -83,7 +72,21 @@
                             <Label Text="NUEVO LANZAMIENTO DE" Style="{StaticResource GrayContentLabel}"/>
                             <Label Text="Scorpions" Style="{StaticResource HeaderLabel}"/>
                         </StackLayout>
-                    </StackLayout>-->
+                    </StackLayout>
+                    <StackLayout Spacing="12"
+                                 Margin="0,12">
+                        <Label Text="Escuchado recientemente" Style="{StaticResource HeaderLabel}"/>
+                        <CollectionView ItemsSource="{Binding Playlists}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:PlaylistItemView/>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
                     <StackLayout Spacing="12"
                                  Margin="0,12">
                         <Label Text="Vuelve a tu música" Style="{StaticResource HeaderLabel}"/>
@@ -93,18 +96,7 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout WidthRequest="140">
-                                        <Image Source="{Binding AlbumImageUrl}" 
-                                               HeightRequest="140"
-                                               WidthRequest="140"
-                                               Margin="0,0,0,12"/>
-                                        <Label Text="{Binding Title}"
-                                               Style="{StaticResource WhiteContentLabel}"
-                                               LineBreakMode="TailTruncation"/>
-                                        <Label Text="{Binding Artist}"
-                                               Style="{StaticResource GrayContentLabel}"
-                                               LineBreakMode="WordWrap"/>
-                                        </StackLayout>
+                                    <templates:SongItemView/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
@@ -120,18 +112,7 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout WidthRequest="140">
-                                        <Image Source="{Binding ImageUrl}" 
-                                               HeightRequest="140"
-                                               WidthRequest="140"
-                                               Margin="0,0,0,12"/>
-                                        <Label Text="{Binding Name}"
-                                               Style="{StaticResource WhiteContentLabel}"
-                                               LineBreakMode="TailTruncation"/>
-                                        <Label Text="{Binding Artist}"
-                                               Style="{StaticResource GrayContentLabel}"
-                                               LineBreakMode="WordWrap"/>
-                                    </StackLayout>
+                                    <templates:AlbumItemView/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
