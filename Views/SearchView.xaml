@@ -2,15 +2,58 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
+             xmlns:templates="clr-namespace:SpotifyMaui.Views.Templates"
              x:Class="SpotifyMaui.Views.SearchView">
     
     <ContentPage.BindingContext>
         <viewmodels:SearchViewModel />
     </ContentPage.BindingContext>
-    
-    <StackLayout>
-        <Label Text="Search"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-    </StackLayout>
+
+    <ScrollView>
+        <Grid BackgroundColor="{StaticResource BlackColor}"
+              Padding="16,9">
+            <Grid Margin="0,50,0,0"
+                  RowDefinitions="Auto, *"
+                  RowSpacing="24">
+                <StackLayout Spacing="18">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Search"
+                               Style="{StaticResource HeaderLabel}"/>
+                        <Image Source="settings.png"
+                               HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <Border Grid.Row="1" 
+                            Stroke="#FFFFFF"
+                            Margin="0"
+                            Background="#FFFFFF">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25" />
+                        </Border.StrokeShape>
+                        <SearchBar Placeholder="Artists, songs or podcasts"
+                                   BackgroundColor="Transparent"/>
+                    </Border>
+                </StackLayout>
+                <StackLayout Grid.Row="1"
+                             Spacing="24">
+                    <Label Text="Explore all" 
+                           Style="{StaticResource WhiteContentLabel}"
+                           FontSize="16"/>
+                    <CollectionView ItemsSource="{Binding SearchCategories}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical"
+                                             Span="2"
+                                             HorizontalItemSpacing="16"
+                                             VerticalItemSpacing="16"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <templates:SearchItemView/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                
+            </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

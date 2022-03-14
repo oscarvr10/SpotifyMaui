@@ -33,7 +33,7 @@
 
             <Style x:Key="HeaderLabel" TargetType="Label">
                 <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="24" />
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
             </Style>
             <Style x:Key="TitleLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">

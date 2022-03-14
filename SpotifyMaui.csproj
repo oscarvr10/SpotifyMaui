@@ -112,6 +112,9 @@
 	  <MauiXaml Update="Views\Templates\PlaylistItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Templates\SearchItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\SongItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

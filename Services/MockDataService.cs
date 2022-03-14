@@ -55,24 +55,26 @@ namespace SpotifyMaui.Services
                 new Artist(){ Name="Muse", ImageUrl="https://pl.scdn.co/images/pl/default/c44c0da53b03b18dd3fdaf91a7cb297e96e96491"},
             };
         }
-        public static List<MusicCategory> GetMusicCategories()
+        public static List<SearchCategory> GetSearchCategories()
         {
-            return new List<MusicCategory>
+            return new List<SearchCategory>
             {
-                new MusicCategory(){ Name="New Releases", StartColor = Colors.DeepSkyBlue, EndColor=Colors.IndianRed },
-                new MusicCategory(){ Name="Charts", StartColor = Colors.DarkBlue, EndColor=Colors.DarkOliveGreen},
-                new MusicCategory(){ Name="Podcasts", StartColor = Colors.LightPink, EndColor=Colors.Orange},
-                new MusicCategory(){ Name="Latin", StartColor = Colors.LightBlue, EndColor=Colors.Blue},
-                new MusicCategory(){ Name="Pop", StartColor = Colors.Purple, EndColor=Colors.MediumVioletRed},
-                new MusicCategory(){ Name="Decades", StartColor = Colors.Pink, EndColor=Colors.HotPink},
-                new MusicCategory(){ Name="Sleep", StartColor = Colors.MediumPurple, EndColor=Colors.LightPink},
-                new MusicCategory(){ Name="Focus", StartColor = Colors.Green, EndColor=Colors.GreenYellow},
-                new MusicCategory(){ Name="Dinner", StartColor = Colors.DarkRed, EndColor=Colors.DarkOrange},
-                new MusicCategory(){ Name="Mood", StartColor = Colors.YellowGreen, EndColor=Colors.LawnGreen},
-                new MusicCategory(){ Name="Indie", StartColor = Colors.MediumSeaGreen, EndColor=Colors.CornflowerBlue},
-                new MusicCategory(){ Name="Rock", StartColor = Colors.DarkBlue, EndColor=Colors.DarkRed},
-                new MusicCategory(){ Name="Punk", StartColor = Colors.DarkRed, EndColor=Colors.Black},
-                new MusicCategory(){ Name="Electronic/Dance", StartColor = Colors.LightSkyBlue, EndColor=Colors.LightSeaGreen},
+                new SearchCategory(){ Name="Podcasts", BackgroundColor=Colors.Orange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Charts", BackgroundColor = Colors.MediumPurple, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="New Releases", BackgroundColor = Colors.DeepPink, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Concerts", BackgroundColor = Colors.DodgerBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Latin", BackgroundColor = Colors.HotPink, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Pop", BackgroundColor = Colors.Purple, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Decades", BackgroundColor=Colors.DarkOrange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Sleep", BackgroundColor = Colors.DarkBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Focus", BackgroundColor = Colors.DarkMagenta, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Dinner", BackgroundColor=Colors.DarkOrange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Mood", BackgroundColor = Colors.YellowGreen, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Indie", BackgroundColor = Colors.Olive, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Rock", BackgroundColor=Colors.DarkRed, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Punk", BackgroundColor=Colors.DarkSlateBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Electronic / Dance", BackgroundColor = Colors.Fuchsia, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Metal", BackgroundColor=Colors.Gray, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
             };
         }
 
