@@ -59,22 +59,21 @@ namespace SpotifyMaui.Services
         {
             return new List<SearchCategory>
             {
-                new SearchCategory(){ Name="Podcasts", BackgroundColor=Colors.Orange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Charts", BackgroundColor = Colors.MediumPurple, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="New Releases", BackgroundColor = Colors.DeepPink, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Concerts", BackgroundColor = Colors.DodgerBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Latin", BackgroundColor = Colors.HotPink, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Pop", BackgroundColor = Colors.Purple, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Decades", BackgroundColor=Colors.DarkOrange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Sleep", BackgroundColor = Colors.DarkBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Focus", BackgroundColor = Colors.DarkMagenta, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Dinner", BackgroundColor=Colors.DarkOrange, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Mood", BackgroundColor = Colors.YellowGreen, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Indie", BackgroundColor = Colors.Olive, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Rock", BackgroundColor=Colors.DarkRed, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Punk", BackgroundColor=Colors.DarkSlateBlue, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Electronic / Dance", BackgroundColor = Colors.Fuchsia, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
-                new SearchCategory(){ Name="Metal", BackgroundColor=Colors.Gray, ImageUrl="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"},
+                new SearchCategory(){ Name="Podcasts", BackgroundColor=Colors.OrangeRed, ImageUrl="https://i.scdn.co/image/567158eb895ad26718a814345af0fc43ee785ec5"},
+                new SearchCategory(){ Name="Charts", BackgroundColor = Colors.MediumPurple, ImageUrl="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"},
+                new SearchCategory(){ Name="New Releases", BackgroundColor = Colors.DeepPink, ImageUrl="https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112"},
+                new SearchCategory(){ Name="Concerts", BackgroundColor = Colors.MidnightBlue, ImageUrl="https://t.scdn.co/images/8cfa9cb1e43a404db76eed6ad594057c"},
+                new SearchCategory(){ Name="Latin", BackgroundColor = Colors.HotPink, ImageUrl="https://t.scdn.co/images/6a48e36b373a4d879a9340076db03a7b"},
+                new SearchCategory(){ Name="Pop", BackgroundColor = Colors.Purple, ImageUrl="https://t.scdn.co/images/0a74d96e091a495bb09c0d83210910c3"},
+                new SearchCategory(){ Name="Decades", BackgroundColor=Colors.DarkOrange, ImageUrl="https://t.scdn.co/images/4c8b58ab42b54296ad5379514d36edac"},
+                new SearchCategory(){ Name="Sleep", BackgroundColor = Colors.MidnightBlue, ImageUrl="https://i.scdn.co/image/ab67706f00000002b70e0223f544b1faa2e95ed0"},
+                new SearchCategory(){ Name="Focus", BackgroundColor = Colors.DarkMagenta, ImageUrl="https://i.scdn.co/image/ab67706f00000002b70e0223f544b1faa2e95ed0"},
+                new SearchCategory(){ Name="Hip hop", BackgroundColor=Colors.DarkOrange, ImageUrl="https://i.scdn.co/image/ab67706f000000029bb6af539d072de34548d15c"},
+                new SearchCategory(){ Name="Rock", BackgroundColor=Colors.Red, ImageUrl="https://i.scdn.co/image/ab67706f00000002fe6d8d1019d5b302213e3730"},
+                new SearchCategory(){ Name="Indie", BackgroundColor = Colors.DarkOliveGreen, ImageUrl="https://i.scdn.co/image/ab67706f000000025f7327d3fdc71af27917adba"},
+                new SearchCategory(){ Name="Metal", BackgroundColor=Colors.Gray, ImageUrl="https://i.scdn.co/image/ab67706f0000000285704160b49125ac95099ec8"},
+                new SearchCategory(){ Name="Punk", BackgroundColor=Colors.MidnightBlue, ImageUrl="https://i.scdn.co/image/ab67706f0000000275251d7d488b0fd69e4c50bd"},
+                new SearchCategory(){ Name="Soul", BackgroundColor = Colors.DeepPink, ImageUrl="https://i.scdn.co/image/ab67706f000000026e1034ebd7b7c86546c6acca"},
             };
         }
 
