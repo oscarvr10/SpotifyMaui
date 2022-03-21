@@ -9,7 +9,7 @@
             <Color x:Key="GrayColor">#292929</Color>
             <Color x:Key="SemiLightGrayColor">#979797</Color>
             <Color x:Key="LightGrayColor">#bdbdbd</Color>
-            <Color x:Key="WhiteColor">#f0f0f0</Color>
+            <Color x:Key="WhiteColor">#e1e1e1</Color>
             <Color x:Key="DarkRedColor">#4d342f</Color>
             <Color x:Key="DarkGrayColor">#282627</Color>          
 
@@ -48,7 +48,7 @@
             <Style x:Key="WhiteContentLabel" TargetType="Label">
                 <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
                 <Setter Property="FontSize" Value="12" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
             </Style>
 
         </ResourceDictionary>

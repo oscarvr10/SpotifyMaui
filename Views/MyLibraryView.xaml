@@ -7,10 +7,105 @@
     <ContentPage.BindingContext>
         <viewmodels:MyLibraryViewModel />
     </ContentPage.BindingContext>
-    
-    <StackLayout>
-        <Label Text="My Library"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-    </StackLayout>
+
+    <ScrollView>
+        <Grid BackgroundColor="{StaticResource BlackColor}"
+              Padding="16,0">
+            <Grid Margin="0,50,0,0"
+                  RowDefinitions="Auto, *">
+                <StackLayout Spacing="18"
+                             Margin="0,0,0,24">
+                    <Grid ColumnDefinitions="*,*">
+                        <StackLayout Orientation="Horizontal"
+                                     Spacing="12">
+                            <Frame BackgroundColor="#5aa1f3"
+                                   VerticalOptions="Center"
+                                   WidthRequest="38"
+                                   HeightRequest="38"
+                                   CornerRadius="40"
+                                   Padding="0">
+                                <Label Text="O" 
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Style="{StaticResource HeaderLabel}"
+                                       TextColor="Black"/>
+                            </Frame>
+                            <Label Text="Library" 
+                                   Style="{StaticResource HeaderLabel}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1"
+                                     Orientation="Horizontal"
+                                     Spacing="20"
+                                     HorizontalOptions="End">
+                            <Image Source="home.png"/>
+                            <Image Source="settings.png"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="1"
+                             Spacing="0">
+                    <CollectionView ItemsSource="{Binding CategoryItems}"
+                                    ItemsLayout="HorizontalList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="0,0,8,0">
+                                    <Frame CornerRadius="20" 
+                                           BorderColor="{StaticResource SemiLightGrayColor}"
+                                           BackgroundColor="Transparent"
+                                           Padding="20,8">
+                                        <Label Text="{Binding Name}" 
+                                               Style="{StaticResource GrayContentLabel}" 
+                                               TextColor="White"/>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Grid ColumnDefinitions="*,*"
+                          Margin="0,18">
+                        <StackLayout Orientation="Horizontal"
+                                     Spacing="12">
+                            <Image Source="home.png" 
+                                   VerticalOptions="Center"
+                                   WidthRequest="13" 
+                                   HeightRequest="13"/>
+                            <Label Text="Recently played"
+                                   Style="{StaticResource WhiteContentLabel}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="End">
+                            <Image Source="settings.png" 
+                                   VerticalOptions="Center"
+                                   WidthRequest="13"
+                                   HeightRequest="13"/>
+                        </StackLayout>
+                    </Grid>
+                    <CollectionView ItemsSource="{Binding Playlists}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="Auto, *"
+                                      ColumnSpacing="12"
+                                      Padding="0,12">
+                                    <Image Source="{Binding ImageUrl}" 
+                                           HeightRequest="62"
+                                           WidthRequest="62"/>
+                                    <StackLayout Grid.Column="1"
+                                                 VerticalOptions="Center">
+                                        <Label Text="{Binding Name}"
+                                               Style="{StaticResource WhiteContentLabel}"
+                                               FontSize="16"
+                                               LineBreakMode="WordWrap"/>
+                                        <Label Text="{Binding Editor}"
+                                               Style="{StaticResource GrayContentLabel}"
+                                               LineBreakMode="WordWrap"/>
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>
