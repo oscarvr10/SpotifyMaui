@@ -63,7 +63,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Utils\Controls\" />
 	  <Folder Include="Utils\Converters\" />
 	</ItemGroup>
 
@@ -96,6 +95,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\BaseShellView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\PlayerControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HomeView.xaml">

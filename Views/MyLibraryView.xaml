@@ -3,67 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"   
              xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
+             xmlns:controls="clr-namespace:SpotifyMaui.Views.Controls"
              x:Class="SpotifyMaui.Views.MyLibraryView">
-    
     <ContentPage.BindingContext>
         <viewmodels:MyLibraryViewModel />
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <Grid BackgroundColor="{StaticResource BlackColor}"
-              Padding="16,0">
-            <Grid Margin="0,50,0,0"
-                  RowDefinitions="Auto, *">
-                <StackLayout Spacing="18"
-                             Margin="0,0,0,24">
-                    <Grid ColumnDefinitions="*,*">
-                        <StackLayout Orientation="Horizontal"
-                                     Spacing="12">
-                            <Frame BackgroundColor="#5aa1f3"
-                                   VerticalOptions="Center"
-                                   WidthRequest="38"
-                                   HeightRequest="38"
-                                   CornerRadius="40"
-                                   Padding="0">
-                                <Label Text="O" 
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"
-                                       Style="{StaticResource HeaderLabel}"
-                                       TextColor="Black"/>
-                            </Frame>
-                            <Label Text="Library" 
-                                   Style="{StaticResource HeaderLabel}"/>
-                        </StackLayout>
-                        <StackLayout Grid.Column="1"
-                                     Orientation="Horizontal"
-                                     Spacing="16"
-                                     HorizontalOptions="End">
-                            <Image Margin="0,6,0,0">
-                                <Image.Source>
-                                    <FontImageSource Color="White" 
-                                                 Size="28" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.Magnify}"/>
-                                </Image.Source>
-                            </Image>
-                            <Image>
-                                <Image.Source>
-                                    <FontImageSource Color="White" 
-                                                 Size="28" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.Plus}"/>
-                                </Image.Source>
-                            </Image>
-                        </StackLayout>
-                    </Grid>
-                </StackLayout>
-                <StackLayout Grid.Row="1"
-                             Spacing="0">
+    <Grid BackgroundColor="{StaticResource BlackColor}"
+          RowDefinitions="Auto,*,Auto">
+        <Grid ColumnDefinitions="*,*"
+              HeightRequest="100">
+            <StackLayout Orientation="Horizontal"
+                         Spacing="12"
+                         Padding="16,0">
+                <Frame BackgroundColor="#5aa1f3"
+                       VerticalOptions="Center"
+                       WidthRequest="38"
+                       HeightRequest="38"
+                       CornerRadius="40"
+                       Padding="0">
+                    <Label Text="O" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Style="{StaticResource HeaderLabel}"
+                           TextColor="Black"/>
+                </Frame>
+                <Label Text="Library"
+                       VerticalOptions="Center"
+                       Style="{StaticResource HeaderLabel}"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1"
+                         Orientation="Horizontal"
+                         Spacing="16"
+                         Padding="16,0"
+                         HorizontalOptions="End">
+                <Image Margin="0,6,0,0">
+                    <Image.Source>
+                        <FontImageSource Color="White" 
+                                         Size="28" 
+                                         FontFamily="MdIcons"
+                                         Glyph="{x:Static local:FontIcons.Magnify}"/>
+                    </Image.Source>
+                </Image>
+                <Image>
+                    <Image.Source>
+                        <FontImageSource Color="White" 
+                                         Size="28" 
+                                         FontFamily="MdIcons"
+                                         Glyph="{x:Static local:FontIcons.Plus}"/>
+                    </Image.Source>
+                </Image>
+            </StackLayout>
+        </Grid>
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <StackLayout>
                     <CollectionView ItemsSource="{Binding CategoryItems}"
                                     ItemsLayout="HorizontalList">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="0,0,8,0">
+                                <Grid Padding="16,0,0,0">
                                     <Frame CornerRadius="20" 
                                            BorderColor="{StaticResource SemiLightGrayColor}"
                                            BackgroundColor="Transparent"
@@ -77,32 +76,36 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <Grid ColumnDefinitions="*,*"
-                          Margin="0,18">
-                        <StackLayout Orientation="Horizontal"
-                                     Spacing="12">
-                            <Image Source="home.png" 
-                                   VerticalOptions="Center"
-                                   WidthRequest="13" 
-                                   HeightRequest="13"/>
-                            <Label Text="Recently played"
-                                   Style="{StaticResource WhiteContentLabel}"/>
-                        </StackLayout>
-                        <StackLayout Grid.Column="1"
-                                     VerticalOptions="Start"
-                                     HorizontalOptions="End">
-                            <Image Source="settings.png" 
-                                   VerticalOptions="Center"
-                                   WidthRequest="13"
-                                   HeightRequest="13"/>
-                        </StackLayout>
-                    </Grid>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0,18,0,10"
+                                 Spacing="22">
+                        <Image Margin="16,6,6,0">
+                            <Image.Source>
+                                <FontImageSource Color="White" 
+                                                 Size="16" 
+                                                 FontFamily="MdIcons"
+                                                 Glyph="{x:Static local:FontIcons.SwapVertical}"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Text="Recently played"
+                               VerticalOptions="End"
+                               HorizontalOptions="End"
+                               Style="{StaticResource WhiteContentLabel}"/>
+                        <Image Margin="0,6,16,0" HorizontalOptions="EndAndExpand">
+                            <Image.Source>
+                                <FontImageSource Color="White" 
+                                                 Size="16" 
+                                                 FontFamily="MdIcons"
+                                                 Glyph="{x:Static local:FontIcons.BorderAll}"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
                     <CollectionView ItemsSource="{Binding Playlists}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid ColumnDefinitions="Auto, *"
+                                <Grid ColumnDefinitions="Auto,*"
                                       ColumnSpacing="12"
-                                      Padding="0,12">
+                                      Padding="16,12">
                                     <Image Source="{Binding ImageUrl}" 
                                            HeightRequest="62"
                                            WidthRequest="62"/>
@@ -122,6 +125,8 @@
                     </CollectionView>
                 </StackLayout>
             </Grid>
-        </Grid>
-    </ScrollView>
+        </ScrollView>
+        <controls:PlayerControl Grid.Row="2"
+                                Margin="12,0"/>
+    </Grid>
 </ContentPage>

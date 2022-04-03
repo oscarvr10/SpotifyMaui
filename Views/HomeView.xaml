@@ -4,10 +4,12 @@
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
              xmlns:templates="clr-namespace:SpotifyMaui.Views.Templates"
              xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
+             xmlns:controls="clr-namespace:SpotifyMaui.Views.Controls"
              x:Class="SpotifyMaui.Views.HomeView">    
     <ContentPage.BindingContext>
         <viewmodels:HomeViewModel />
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource BlackColor}">
             <ScrollView>
@@ -142,7 +144,8 @@
                     </StackLayout>                    
                 </Grid>
             </ScrollView>
-            
+            <controls:PlayerControl VerticalOptions="EndAndExpand"
+                                    Margin="12,0"/>            
         </Grid>        
     </ContentPage.Content>    
 </ContentPage>
