@@ -12,6 +12,7 @@ public static class MauiProgram
 				fonts.AddFont("circular-bold.ttf", "CircularSpotifyTxT-Bold");
 				fonts.AddFont("circular-book.ttf", "CircularSpotifyTxT-Book");
 				fonts.AddFont("circular-medium.ttf", "CircularSpotifyTxT-Med");
+				fonts.AddFont("FontIcons.ttf", "MdIcons");
 			});
 
 		return builder.Build();

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"             
+             xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"   
+             xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
              x:Class="SpotifyMaui.Views.MyLibraryView">
     
     <ContentPage.BindingContext>
@@ -35,10 +36,24 @@
                         </StackLayout>
                         <StackLayout Grid.Column="1"
                                      Orientation="Horizontal"
-                                     Spacing="20"
+                                     Spacing="16"
                                      HorizontalOptions="End">
-                            <Image Source="home.png"/>
-                            <Image Source="settings.png"/>
+                            <Image Margin="0,6,0,0">
+                                <Image.Source>
+                                    <FontImageSource Color="White" 
+                                                 Size="28" 
+                                                 FontFamily="MdIcons"
+                                                 Glyph="{x:Static local:FontIcons.Magnify}"/>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="White" 
+                                                 Size="28" 
+                                                 FontFamily="MdIcons"
+                                                 Glyph="{x:Static local:FontIcons.Plus}"/>
+                                </Image.Source>
+                            </Image>
                         </StackLayout>
                     </Grid>
                 </StackLayout>
@@ -52,9 +67,10 @@
                                     <Frame CornerRadius="20" 
                                            BorderColor="{StaticResource SemiLightGrayColor}"
                                            BackgroundColor="Transparent"
-                                           Padding="20,8">
+                                           Padding="18,8">
                                         <Label Text="{Binding Name}" 
                                                Style="{StaticResource GrayContentLabel}" 
+                                               FontSize="14"
                                                TextColor="White"/>
                                     </Frame>
                                 </Grid>
