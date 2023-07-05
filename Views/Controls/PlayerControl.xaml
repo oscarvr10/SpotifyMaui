@@ -1,74 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
-       x:Class="SpotifyMaui.Views.Controls.PlayerControl"
-       CornerRadius="6" 
-       BackgroundColor="Black"
-       IsClippedToBounds="True"
-       Padding="8,0,0,0">
-    <Grid HeightRequest="60">
-        <StackLayout Orientation="Horizontal" 
-                     VerticalOptions="Center">
-            <Frame CornerRadius="6" 
-                   Padding="0"
-                   BackgroundColor="Black"
-                   VerticalOptions="Center"
-                   IsClippedToBounds="True"
-                   HeightRequest="40"
-                   WidthRequest="40">
-                <Image Source="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6"/>
-            </Frame>
-            <Label VerticalOptions="Center"
-                   Margin="10,0">
+<Frame
+    x:Class="SpotifyMaui.Views.Controls.PlayerControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
+    Padding="6,0"
+    BackgroundColor="#121233"
+    CornerRadius="6"
+    IsClippedToBounds="True">
+    <Grid HeightRequest="50">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+            <Border
+                Margin="0"
+                BackgroundColor="Transparent"
+                HeightRequest="35"
+                StrokeShape="RoundRectangle 4"
+                VerticalOptions="Center"
+                WidthRequest="35">
+                <Image Source="https://i.scdn.co/image/ce2cb283df41c592e72df1900558d8af97445aa6" />
+            </Border>
+            <Label Margin="10,0" VerticalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Fix You &#x0a;" 
-                              Style="{StaticResource GrayContentLabel}" 
-                              FontSize="14"
-                              TextColor="{StaticResource WhiteColor}"/>
-                        <Span Text="Coldplay" 
-                              Style="{StaticResource GrayContentLabel}" 
-                              TextColor="{StaticResource SemiLightGrayColor}"
-                              FontSize="12" />
+                        <Span
+                            FontSize="14"
+                            Style="{StaticResource GrayContentLabel}"
+                            Text="Fix You &#x0a;"
+                            TextColor="{StaticResource WhiteColor}" />
+                        <Span
+                            FontSize="12"
+                            Style="{StaticResource GrayContentLabel}"
+                            Text="Coldplay"
+                            TextColor="{StaticResource SemiLightGrayColor}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Image VerticalOptions="Center"
-                   Margin="0,0,10,0"
-                   HorizontalOptions="EndAndExpand">
+            <Image
+                Margin="0,0,24,0"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="Center">
                 <Image.Source>
-                    <FontImageSource Color="White"
-                                     Size="24"
-                                     FontFamily="MdIcons"
-                                     Glyph="{x:Static local:FontIcons.MonitorSpeaker}"/>
+                    <FontImageSource
+                        FontFamily="MdIcons"
+                        Glyph="{x:Static local:FontIcons.MonitorSpeaker}"
+                        Size="22"
+                        Color="White" />
                 </Image.Source>
             </Image>
-            <Image VerticalOptions="Center"
-                   HorizontalOptions="End">
+            <Image HorizontalOptions="End" VerticalOptions="Center">
                 <Image.Source>
-                    <FontImageSource Color="White" 
-                                     Size="32" 
-                                     FontFamily="MdIcons"
-                                     Glyph="{x:Static local:FontIcons.Play}"/>
+                    <FontImageSource
+                        FontFamily="MdIcons"
+                        Glyph="{x:Static local:FontIcons.Play}"
+                        Size="32"
+                        Color="White" />
                 </Image.Source>
             </Image>
         </StackLayout>
-        <Line StrokeLineCap="Round"
-              Stroke="{StaticResource DarkGrayColor}"
-              X1="0"
-              Y1="57"
-              X2="1000"
-              Y2="57"
-              StrokeThickness="3"
-              VerticalOptions="End"/>
-        <Line StrokeLineCap="Round"
-              Stroke="{StaticResource WhiteColor}"
-              X1="0"
-              Y1="57"
-              X2="30"
-              Y2="57"
-              StrokeThickness="3"
-              VerticalOptions="End"/>
+        <Grid VerticalOptions="EndAndExpand">
+            <Line
+                Stroke="{StaticResource DarkGrayColor}"
+                StrokeLineCap="Round"
+                StrokeThickness="3"
+                X1="0"
+                X2="1000"
+                Y1="57"
+                Y2="57" />
+            <Line
+                Stroke="{StaticResource WhiteColor}"
+                StrokeLineCap="Round"
+                StrokeThickness="3"
+                X1="0"
+                X2="30"
+                Y1="57"
+                Y2="57" />
+        </Grid>
     </Grid>
 </Frame>
