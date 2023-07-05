@@ -165,7 +165,9 @@
                     </StackLayout>
                 </Grid>
             </ScrollView>
-            <controls:PlayerControl Margin="12,0" VerticalOptions="EndAndExpand" />
+            <Grid VerticalOptions="EndAndExpand" Padding="8,0">
+                <controls:PlayerControl />
+            </Grid>            
         </Grid>
     </ContentPage.Content>
 </ContentPage>
