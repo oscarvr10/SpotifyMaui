@@ -1,25 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       x:Class="SpotifyMaui.Views.Templates.SearchItemView">
+<ContentView
+    x:Class="SpotifyMaui.Views.Templates.SearchItemView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Border
-        HeightRequest="90"
+        Padding="0"
         BackgroundColor="{Binding BackgroundColor}"
-        StrokeShape="RoundRectangle 6"
-        Padding="0">
-        <Grid ColumnDefinitions="7*,3*"
-              HorizontalOptions="FillAndExpand">
-            <Label Text="{Binding Name}"
-                   Margin="12"
-                   Style="{StaticResource WhiteContentLabel}"
-                   LineBreakMode="WordWrap"
-                   FontSize="18"/>        
-            <Image Grid.Column="1"
-                   Source="{Binding ImageUrl}"
-                   WidthRequest="80"
-                   Margin="0,25,0,0"
-                   Rotation="25"
-                   VerticalOptions="FillAndExpand"/>
+        HeightRequest="90"
+        StrokeShape="RoundRectangle 6">
+        <Grid ColumnDefinitions="7*,3*" HorizontalOptions="FillAndExpand">
+            <Label
+                Margin="12"
+                FontSize="18"
+                LineBreakMode="WordWrap"
+                Style="{StaticResource WhiteContentLabel}"
+                Text="{Binding Name}" />
+            <Image
+                Grid.Column="1"
+                Margin="0,25,0,0"
+                Rotation="25"
+                Source="{Binding ImageUrl}"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="80" />
         </Grid>
     </Border>
 </ContentView>

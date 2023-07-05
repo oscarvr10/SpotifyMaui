@@ -1,7 +1,6 @@
-﻿namespace SpotifyMaui.Models
+﻿namespace SpotifyMaui.Models;
+
+public class CategoryItem
 {
-    public class CategoryItem
-    {
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
 }

@@ -1,8 +1,7 @@
-﻿namespace SpotifyMaui.Models
+﻿namespace SpotifyMaui.Models;
+
+public class Artist
 {
-    public class Artist
-    {
-        public string Name { get; set; }
-        public string ImageUrl { get; set; }
-    }
+    public string Name { get; set; }
+    public string ImageUrl { get; set; }
 }

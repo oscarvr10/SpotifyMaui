@@ -1,9 +1,8 @@
-﻿namespace SpotifyMaui.Models
+﻿namespace SpotifyMaui.Models;
+
+public class SearchCategory
 {
-    public class SearchCategory
-    {
-        public string Name { get; set; }
-        public Color BackgroundColor { get; set; }
-        public string ImageUrl { get; set; }
-    }
+    public string Name { get; set; }
+    public Color BackgroundColor { get; set; }
+    public string ImageUrl { get; set; }
 }

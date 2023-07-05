@@ -1,57 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"   
-             xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
-             xmlns:controls="clr-namespace:SpotifyMaui.Views.Controls"
-             x:Class="SpotifyMaui.Views.MyLibraryView">
+<ContentPage
+    x:Class="SpotifyMaui.Views.MyLibraryView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SpotifyMaui.Views.Controls"
+    xmlns:local="clr-namespace:SpotifyMaui.Utils.CustomFonts"
+    xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels">
     <ContentPage.BindingContext>
         <viewmodels:MyLibraryViewModel />
     </ContentPage.BindingContext>
 
-    <Grid BackgroundColor="{StaticResource BlackColor}"
-          RowDefinitions="Auto,*,Auto">
-        <Grid ColumnDefinitions="*,*"
-              Padding="0,12,0,0"
-              HeightRequest="110">
-            <StackLayout Orientation="Horizontal"
-                         Spacing="12"
-                         Padding="16,0">
-                <Border BackgroundColor="#5aa1f3"
-                       VerticalOptions="Center"
-                       WidthRequest="38"
-                       HeightRequest="38"
-                       StrokeShape="RoundRectangle 40"
-                       Padding="0">
-                    <Label Text="O" 
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Style="{StaticResource HeaderLabel}"
-                           TextColor="Black"/>
+    <Grid BackgroundColor="{StaticResource BlackColor}" RowDefinitions="Auto,*,Auto">
+        <Grid
+            Padding="0,12,0,0"
+            ColumnDefinitions="*,*"
+            HeightRequest="110">
+            <StackLayout
+                Padding="16,0"
+                Orientation="Horizontal"
+                Spacing="12">
+                <Border
+                    Padding="0"
+                    BackgroundColor="#5aa1f3"
+                    HeightRequest="38"
+                    StrokeShape="RoundRectangle 40"
+                    VerticalOptions="Center"
+                    WidthRequest="38">
+                    <Label
+                        HorizontalOptions="Center"
+                        Style="{StaticResource HeaderLabel}"
+                        Text="O"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
                 </Border>
-                <Label Text="Library"
-                       VerticalOptions="Center"
-                       Style="{StaticResource HeaderLabel}"/>
+                <Label
+                    Style="{StaticResource HeaderLabel}"
+                    Text="Library"
+                    VerticalOptions="Center" />
             </StackLayout>
-            <StackLayout Grid.Column="1"
-                         Orientation="Horizontal"
-                         Spacing="16"
-                         Padding="16,0"
-                         HorizontalOptions="EndAndExpand">
+            <StackLayout
+                Grid.Column="1"
+                Padding="16,0"
+                HorizontalOptions="EndAndExpand"
+                Orientation="Horizontal"
+                Spacing="16">
                 <Image Margin="0,6,0,0">
                     <Image.Source>
-                        <FontImageSource Color="White" 
-                                         Size="28" 
-                                         FontFamily="MdIcons"
-                                         Glyph="{x:Static local:FontIcons.Magnify}"/>
+                        <FontImageSource
+                            FontFamily="MdIcons"
+                            Glyph="{x:Static local:FontIcons.Magnify}"
+                            Size="28"
+                            Color="White" />
                     </Image.Source>
                 </Image>
                 <Image>
                     <Image.Source>
-                        <FontImageSource Color="White" 
-                                         Size="28" 
-                                         FontFamily="MdIcons"
-                                         Glyph="{x:Static local:FontIcons.Plus}"/>
+                        <FontImageSource
+                            FontFamily="MdIcons"
+                            Glyph="{x:Static local:FontIcons.Plus}"
+                            Size="28"
+                            Color="White" />
                     </Image.Source>
                 </Image>
             </StackLayout>
@@ -59,71 +67,78 @@
         <ScrollView Grid.Row="1" Margin="0,0,0,24">
             <Grid>
                 <VerticalStackLayout>
-                    <HorizontalStackLayout
-                        BindableLayout.ItemsSource="{Binding CategoryItems}"
-                        HeightRequest="35">
+                    <HorizontalStackLayout BindableLayout.ItemsSource="{Binding CategoryItems}" HeightRequest="35">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid Padding="12,0,0,0">
-                                    <Frame CornerRadius="20"
-                                           IsClippedToBounds="True"
-                                           BorderColor="#FF2A2A2A"
-                                           BackgroundColor="#FF2A2A2A"
-                                           Padding="12,0">
-                                        <Label Text="{Binding Name}" 
-                                               Style="{StaticResource GrayContentLabel}" 
-                                               FontSize="12"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center"
-                                               TextColor="White"/>
+                                    <Frame
+                                        Padding="12,0"
+                                        BackgroundColor="#FF2A2A2A"
+                                        BorderColor="#FF2A2A2A"
+                                        CornerRadius="20"
+                                        IsClippedToBounds="True">
+                                        <Label
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            Style="{StaticResource GrayContentLabel}"
+                                            Text="{Binding Name}"
+                                            TextColor="White"
+                                            VerticalOptions="Center" />
                                     </Frame>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </HorizontalStackLayout>
-                    <Grid
-                        ColumnDefinitions="Auto, Auto, *"
-                        Margin="0,18,0,10">
+                    <Grid Margin="0,18,0,10" ColumnDefinitions="Auto, Auto, *">
                         <Image Margin="16,6,0,0">
                             <Image.Source>
-                                <FontImageSource Color="White" 
-                                                 Size="16" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.SwapVertical}"/>
+                                <FontImageSource
+                                    FontFamily="MdIcons"
+                                    Glyph="{x:Static local:FontIcons.SwapVertical}"
+                                    Size="16"
+                                    Color="White" />
                             </Image.Source>
                         </Image>
-                        <Label Grid.Column="1"
-                               Text="Recently played"
-                               Margin="6,6,0,0"
-                               VerticalOptions="Center"
-                               Style="{StaticResource WhiteContentLabel}"/>
-                        <Image Margin="12,6,16,0" Grid.Column="2" HorizontalOptions="EndAndExpand">
+                        <Label
+                            Grid.Column="1"
+                            Margin="6,6,0,0"
+                            Style="{StaticResource WhiteContentLabel}"
+                            Text="Recently played"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Column="2"
+                            Margin="12,6,16,0"
+                            HorizontalOptions="EndAndExpand">
                             <Image.Source>
-                                <FontImageSource Color="White" 
-                                                 Size="16" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.BorderAll}"/>
+                                <FontImageSource
+                                    FontFamily="MdIcons"
+                                    Glyph="{x:Static local:FontIcons.BorderAll}"
+                                    Size="16"
+                                    Color="White" />
                             </Image.Source>
                         </Image>
                     </Grid>
                     <StackLayout BindableLayout.ItemsSource="{Binding Playlists}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid ColumnDefinitions="Auto,*"
-                                      ColumnSpacing="12"
-                                      Padding="16,12">
-                                    <Image Source="{Binding ImageUrl}" 
-                                           HeightRequest="62"
-                                           WidthRequest="62"/>
-                                    <StackLayout Grid.Column="1"
-                                                 VerticalOptions="Center">
-                                        <Label Text="{Binding Name}"
-                                               Style="{StaticResource WhiteContentLabel}"
-                                               FontSize="16"
-                                               LineBreakMode="WordWrap"/>
-                                        <Label Text="{Binding Editor}"
-                                               Style="{StaticResource GrayContentLabel}"
-                                               LineBreakMode="WordWrap"/>
+                                <Grid
+                                    Padding="16,12"
+                                    ColumnDefinitions="Auto,*"
+                                    ColumnSpacing="12">
+                                    <Image
+                                        HeightRequest="62"
+                                        Source="{Binding ImageUrl}"
+                                        WidthRequest="62" />
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label
+                                            FontSize="16"
+                                            LineBreakMode="WordWrap"
+                                            Style="{StaticResource WhiteContentLabel}"
+                                            Text="{Binding Name}" />
+                                        <Label
+                                            LineBreakMode="WordWrap"
+                                            Style="{StaticResource GrayContentLabel}"
+                                            Text="{Binding Editor}" />
                                     </StackLayout>
                                 </Grid>
                             </DataTemplate>
@@ -132,7 +147,6 @@
                 </VerticalStackLayout>
             </Grid>
         </ScrollView>
-        <controls:PlayerControl Grid.Row="2"
-                                Margin="12,0"/>
+        <controls:PlayerControl Grid.Row="2" Margin="12,0" />
     </Grid>
 </ContentPage>

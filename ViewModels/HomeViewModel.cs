@@ -2,64 +2,63 @@
 using SpotifyMaui.Services;
 using SpotifyMaui.ViewModels.Base;
 
-namespace SpotifyMaui.ViewModels
+namespace SpotifyMaui.ViewModels;
+
+public class HomeViewModel : ViewModelBase
 {
-    public class HomeViewModel : ViewModelBase
+    List<Recent> _recents;
+    public List<Recent> Recents
     {
-        List<Recent> _recents;
-        public List<Recent> Recents
+        get { return _recents; }
+        set
         {
-            get { return _recents; }
-            set
-            {
-                _recents = value;
-                OnPropertyChanged();
-            }
+            _recents = value;
+            OnPropertyChanged();
         }
+    }
 
-        List<Album> _albums;
-        public List<Album> Albums
+    List<Album> _albums;
+    public List<Album> Albums
+    {
+        get { return _albums; }
+        set
         {
-            get { return _albums; }
-            set
-            {
-                _albums = value;
-                OnPropertyChanged();
-            }
+            _albums = value;
+            OnPropertyChanged();
         }
+    }
 
-        List<Song> _songs;
-        public List<Song> Songs
+    List<Song> _songs;
+    public List<Song> Songs
+    {
+        get { return _songs; }
+        set
         {
-            get { return _songs; }
-            set
-            {
-                _songs = value;
-                OnPropertyChanged();
-            }
+            _songs = value;
+            OnPropertyChanged();
         }
+    }
 
-        List<Playlist> _playlists;
-        public List<Playlist> Playlists
+    List<Playlist> _playlists;
+    public List<Playlist> Playlists
+    {
+        get { return _playlists; }
+        set
         {
-            get { return _playlists; }
-            set
-            {
-                _playlists = value;
-                OnPropertyChanged();
-            }
+            _playlists = value;
+            OnPropertyChanged();
         }
-        public HomeViewModel()
-        {
-            InitData();
-        }
+    }
+    public HomeViewModel()
+    {
+        InitData();
+    }
 
-        public void InitData()
-        {
-            Recents = MockDataService.GetRecents();
-            Albums = MockDataService.GetAlbums();
-            Songs = MockDataService.GetSongs();
-            Playlists = MockDataService.GetPlaylists();
-        }
+    public void InitData()
+    {
+        Recents = MockDataService.GetRecents();
+        Albums = MockDataService.GetAlbums();
+        Songs = MockDataService.GetSongs();
+        Playlists = MockDataService.GetPlaylists();
     }
 }

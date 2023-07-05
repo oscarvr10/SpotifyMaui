@@ -1,7 +1,8 @@
-﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SpotifyMaui"
-             x:Class="SpotifyMaui.App">
+﻿<Application
+    x:Class="SpotifyMaui.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SpotifyMaui">
     <Application.Resources>
         <ResourceDictionary>
 
@@ -11,20 +12,15 @@
             <Color x:Key="LightGrayColor">#bdbdbd</Color>
             <Color x:Key="WhiteColor">#e1e1e1</Color>
             <Color x:Key="DarkRedColor">#4d342f</Color>
-            <Color x:Key="DarkGrayColor">#282627</Color>          
+            <Color x:Key="DarkGrayColor">#282627</Color>
 
 
-            <Style x:Key="BaseStyle"  TargetType="TabBar"> 
-                <Setter Property="Shell.TabBarBackgroundColor"
-                        Value="#131313" />
-                <Setter Property="Shell.TabBarForegroundColor"
-                        Value="White" />
-                <Setter Property="Shell.NavBarIsVisible"
-                        Value="False" />
-                <Setter Property="Shell.TabBarUnselectedColor"
-                        Value="LightGrey" />
-                <Setter Property="Shell.TabBarTitleColor"
-                        Value="White" />
+            <Style x:Key="BaseStyle" TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#131313" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.NavBarIsVisible" Value="False" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="LightGrey" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
             </Style>
 
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
@@ -38,12 +34,18 @@
                 <Setter Property="FontSize" Value="24" />
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
             </Style>
-            <Style x:Key="TitleLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+            <Style
+                x:Key="TitleLabel"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
                 <Setter Property="FontFamily" Value="CircularSpotifyTxT-Bold" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
             </Style>
-            <Style x:Key="GrayContentLabel"  BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+            <Style
+                x:Key="GrayContentLabel"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
                 <Setter Property="FontSize" Value="12" />
                 <Setter Property="TextColor" Value="{StaticResource SemiLightGrayColor}" />
             </Style>

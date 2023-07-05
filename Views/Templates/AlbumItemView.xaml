@@ -1,16 +1,20 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SpotifyMaui.Views.Templates.AlbumItemView"
-             WidthRequest="140">
-    <Image Source="{Binding ImageUrl}" 
-           HeightRequest="140"
-           WidthRequest="140"
-           Margin="0,0,0,12"/>
-    <Label Text="{Binding Name}"
-           Style="{StaticResource WhiteContentLabel}"
-           LineBreakMode="TailTruncation"/>
-    <Label Text="{Binding Artist}"
-           Style="{StaticResource GrayContentLabel}"
-           LineBreakMode="WordWrap"/>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="SpotifyMaui.Views.Templates.AlbumItemView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    WidthRequest="140">
+    <Image
+        Margin="0,0,0,12"
+        HeightRequest="140"
+        Source="{Binding ImageUrl}"
+        WidthRequest="140" />
+    <Label
+        LineBreakMode="TailTruncation"
+        Style="{StaticResource WhiteContentLabel}"
+        Text="{Binding Name}" />
+    <Label
+        LineBreakMode="WordWrap"
+        Style="{StaticResource GrayContentLabel}"
+        Text="{Binding Artist}" />
 </StackLayout>

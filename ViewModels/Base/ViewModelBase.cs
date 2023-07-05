@@ -1,10 +1,9 @@
-﻿namespace SpotifyMaui.ViewModels.Base
+﻿namespace SpotifyMaui.ViewModels.Base;
+
+public class ViewModelBase : BindableObject
 {
-    public class ViewModelBase : BindableObject
+    public virtual Task InitializeAsync(object navigationData)
     {
-        public virtual Task InitializeAsync(object navigationData)
-        {
-            return Task.FromResult(false);
-        }
+        return Task.FromResult(false);
     }
 }

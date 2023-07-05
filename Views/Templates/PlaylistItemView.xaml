@@ -1,13 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-          x:Class="SpotifyMaui.Views.Templates.PlaylistItemView"
-          WidthRequest="140">
-    <Image Source="{Binding ImageUrl}" 
-           HeightRequest="140"
-           WidthRequest="140"
-           Margin="0,0,0,12"/>
-    <Label Text="{Binding Name}"
-           Style="{StaticResource WhiteContentLabel}"
-           LineBreakMode="WordWrap"/>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="SpotifyMaui.Views.Templates.PlaylistItemView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    WidthRequest="140">
+    <Image
+        Margin="0,0,0,12"
+        HeightRequest="140"
+        Source="{Binding ImageUrl}"
+        WidthRequest="140" />
+    <Label
+        LineBreakMode="WordWrap"
+        Style="{StaticResource WhiteContentLabel}"
+        Text="{Binding Name}" />
 </StackLayout>

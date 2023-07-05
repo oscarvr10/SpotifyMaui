@@ -1,20 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-      x:Class="SpotifyMaui.Views.Templates.RecentItemView">
-    <Border BackgroundColor="{StaticResource DarkGrayColor}"
-           StrokeShape="RoundRectangle 4"
-           Padding="0">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="SpotifyMaui.Views.Templates.RecentItemView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Border
+        Padding="0"
+        BackgroundColor="{StaticResource DarkGrayColor}"
+        StrokeShape="RoundRectangle 4">
         <HorizontalStackLayout Spacing="8">
-            <Image Source="{Binding PathImage}"
-                   WidthRequest="58"
-                   HeightRequest="58"/>
-            <Label Text="{Binding Description}"
-                   Style="{StaticResource TitleLabel}"
-                   LineBreakMode="WordWrap"
-                   WidthRequest="90"
-                   MaxLines="2"          
-                   VerticalOptions="Center"/>
+            <Image
+                HeightRequest="58"
+                Source="{Binding PathImage}"
+                WidthRequest="58" />
+            <Label
+                LineBreakMode="WordWrap"
+                MaxLines="2"
+                Style="{StaticResource TitleLabel}"
+                Text="{Binding Description}"
+                VerticalOptions="Center"
+                WidthRequest="90" />
         </HorizontalStackLayout>
     </Border>
 </Grid>

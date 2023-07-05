@@ -1,11 +1,10 @@
-﻿namespace SpotifyMaui.Views.Templates
+﻿namespace SpotifyMaui.Views.Templates;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
+public partial class RecentItemView : Grid
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RecentItemView : Grid
+    public RecentItemView()
     {
-        public RecentItemView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -1,11 +1,10 @@
-﻿namespace SpotifyMaui.Views.Templates
+﻿namespace SpotifyMaui.Views.Templates;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
+public partial class AlbumItemView : StackLayout
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AlbumItemView : StackLayout
+    public AlbumItemView()
     {
-        public AlbumItemView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

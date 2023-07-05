@@ -1,8 +1,7 @@
-﻿namespace SpotifyMaui.Models
+﻿namespace SpotifyMaui.Models;
+
+public class Recent
 {
-    public class Recent
-    {
-        public string PathImage { get; set; }
-        public string Description { get; set; }
-    }
+    public string PathImage { get; set; }
+    public string Description { get; set; }
 }

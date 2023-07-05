@@ -48,8 +48,8 @@
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
-		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.5" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.3.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -60,10 +60,6 @@
 	  <None Remove="Resources\Images\home.svg" />
 	  <None Remove="Resources\Images\library.svg" />
 	  <None Remove="Resources\Images\search.svg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Utils\Converters\" />
 	</ItemGroup>
 
 	<ItemGroup>
