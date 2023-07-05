@@ -34,9 +34,9 @@ namespace SpotifyMaui.ViewModels
             CategoryItems = new List<CategoryItem>
             {
                 new CategoryItem{Name = "Playlists"},
-                new CategoryItem{Name = "Artists"},
+                new CategoryItem{Name = "Podcasts & Shows"},
                 new CategoryItem{Name = "Albums"},
-                new CategoryItem{Name = "Podcasts"},
+                new CategoryItem{Name = "Artists"},
                 new CategoryItem{Name = "Downloads"}
             };
         }

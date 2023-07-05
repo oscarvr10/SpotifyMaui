@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"   
@@ -12,22 +12,23 @@
     <Grid BackgroundColor="{StaticResource BlackColor}"
           RowDefinitions="Auto,*,Auto">
         <Grid ColumnDefinitions="*,*"
-              HeightRequest="100">
+              Padding="0,12,0,0"
+              HeightRequest="110">
             <StackLayout Orientation="Horizontal"
                          Spacing="12"
                          Padding="16,0">
-                <Frame BackgroundColor="#5aa1f3"
+                <Border BackgroundColor="#5aa1f3"
                        VerticalOptions="Center"
                        WidthRequest="38"
                        HeightRequest="38"
-                       CornerRadius="40"
+                       StrokeShape="RoundRectangle 40"
                        Padding="0">
                     <Label Text="O" 
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            Style="{StaticResource HeaderLabel}"
                            TextColor="Black"/>
-                </Frame>
+                </Border>
                 <Label Text="Library"
                        VerticalOptions="Center"
                        Style="{StaticResource HeaderLabel}"/>
@@ -36,7 +37,7 @@
                          Orientation="Horizontal"
                          Spacing="16"
                          Padding="16,0"
-                         HorizontalOptions="End">
+                         HorizontalOptions="EndAndExpand">
                 <Image Margin="0,6,0,0">
                     <Image.Source>
                         <FontImageSource Color="White" 
@@ -55,31 +56,35 @@
                 </Image>
             </StackLayout>
         </Grid>
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="1" Margin="0,0,0,24">
             <Grid>
-                <StackLayout>
-                    <CollectionView ItemsSource="{Binding CategoryItems}"
-                                    ItemsLayout="HorizontalList">
-                        <CollectionView.ItemTemplate>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        BindableLayout.ItemsSource="{Binding CategoryItems}"
+                        HeightRequest="35">
+                        <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="16,0,0,0">
-                                    <Frame CornerRadius="20" 
-                                           BorderColor="{StaticResource SemiLightGrayColor}"
-                                           BackgroundColor="Transparent"
-                                           Padding="18,8">
+                                <Grid Padding="12,0,0,0">
+                                    <Frame CornerRadius="20"
+                                           IsClippedToBounds="True"
+                                           BorderColor="#FF2A2A2A"
+                                           BackgroundColor="#FF2A2A2A"
+                                           Padding="12,0">
                                         <Label Text="{Binding Name}" 
                                                Style="{StaticResource GrayContentLabel}" 
-                                               FontSize="14"
+                                               FontSize="12"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
                                                TextColor="White"/>
                                     </Frame>
                                 </Grid>
                             </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <StackLayout Orientation="Horizontal"
-                                 Margin="0,18,0,10"
-                                 Spacing="22">
-                        <Image Margin="16,6,6,0">
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                    <Grid
+                        ColumnDefinitions="Auto, Auto, *"
+                        Margin="0,18,0,10">
+                        <Image Margin="16,6,0,0">
                             <Image.Source>
                                 <FontImageSource Color="White" 
                                                  Size="16" 
@@ -87,11 +92,12 @@
                                                  Glyph="{x:Static local:FontIcons.SwapVertical}"/>
                             </Image.Source>
                         </Image>
-                        <Label Text="Recently played"
-                               VerticalOptions="End"
-                               HorizontalOptions="End"
+                        <Label Grid.Column="1"
+                               Text="Recently played"
+                               Margin="6,6,0,0"
+                               VerticalOptions="Center"
                                Style="{StaticResource WhiteContentLabel}"/>
-                        <Image Margin="0,6,16,0" HorizontalOptions="EndAndExpand">
+                        <Image Margin="12,6,16,0" Grid.Column="2" HorizontalOptions="EndAndExpand">
                             <Image.Source>
                                 <FontImageSource Color="White" 
                                                  Size="16" 
@@ -99,9 +105,9 @@
                                                  Glyph="{x:Static local:FontIcons.BorderAll}"/>
                             </Image.Source>
                         </Image>
-                    </StackLayout>
-                    <CollectionView ItemsSource="{Binding Playlists}">
-                        <CollectionView.ItemTemplate>
+                    </Grid>
+                    <StackLayout BindableLayout.ItemsSource="{Binding Playlists}">
+                        <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid ColumnDefinitions="Auto,*"
                                       ColumnSpacing="12"
@@ -121,9 +127,9 @@
                                     </StackLayout>
                                 </Grid>
                             </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </StackLayout>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </VerticalStackLayout>
             </Grid>
         </ScrollView>
         <controls:PlayerControl Grid.Row="2"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
@@ -11,12 +11,21 @@
     </ContentPage.BindingContext>
 
     <Grid BackgroundColor="{StaticResource BlackColor}">
-        <ScrollView>
-            <Grid 
-              Padding="16,0">
-                <Grid Margin="0,50,0,0"
-                  RowDefinitions="Auto, *"
-                  RowSpacing="24">
+        <CollectionView ItemsSource="{Binding SearchCategories}"
+                        Margin="16,42,16,0"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="2"
+                    HorizontalItemSpacing="16"
+                    VerticalItemSpacing="16"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.Header>
+                <Grid
+                    RowDefinitions="Auto, *"
+                    RowSpacing="24"
+                    Padding="0,0,0,12">
                     <StackLayout Spacing="18">
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Search"
@@ -31,39 +40,39 @@
                             </Image>
                         </StackLayout>
                         <Border Grid.Row="1" 
-                            Stroke="#FFFFFF"
                             Margin="0"
-                            Background="#FFFFFF">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="25" />
-                            </Border.StrokeShape>
-                            <SearchBar Placeholder="Artists, songs or podcasts"
-                                   BackgroundColor="Transparent"/>
+                            StrokeShape="RoundRectangle 9"
+                            BackgroundColor="#FFFFFF">
+                            <Grid>
+                                
+                                <Grid
+                                    Padding="12,0"
+                                    HeightRequest="48">
+                                    <Image
+                                        Source="search.png"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="StartAndExpand"/>
+                                    <Editor
+                                        Margin="32,-2,0,0"
+                                        VerticalOptions="CenterAndExpand"
+                                        Placeholder="What do you want to listen to?"
+                                        PlaceholderColor="Black"
+                                        BackgroundColor="Transparent"/>
+                                </Grid>
+                            </Grid>
                         </Border>
                     </StackLayout>
-                    <StackLayout Grid.Row="1"
-                             Spacing="24">
-                        <Label Text="Explore all" 
+                    <Label Grid.Row="1" Text="Explore all" 
                            Style="{StaticResource WhiteContentLabel}"
                            FontSize="16"/>
-                        <CollectionView ItemsSource="{Binding SearchCategories}">
-                            <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Vertical"
-                                             Span="2"
-                                             HorizontalItemSpacing="16"
-                                             VerticalItemSpacing="16"/>
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:SearchItemView/>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </StackLayout>
-
                 </Grid>
-            </Grid>
-        </ScrollView>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <templates:SearchItemView/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <controls:PlayerControl VerticalOptions="EndAndExpand"
                                 Margin="12,0"/>
     </Grid>

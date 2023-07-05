@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SpotifyMaui.ViewModels"
@@ -12,137 +12,148 @@
     
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource BlackColor}">
-            <ScrollView>
-                <Grid>
-                    <Grid>
-                        <Frame Padding="0" 
-                               HeightRequest="140"
-                               HorizontalOptions="FillAndExpand"
-                               BorderColor="{StaticResource BlackColor}"
-                               BackgroundColor="DarkGrey"
-                               HasShadow="True">
-                            <Frame.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                    <GradientStop Color="#98615c" Offset="0.0"/>
-                                    <GradientStop Color="#553834" Offset="0.1"/>
-                                    <GradientStop Color="#271b1b" Offset="0.75"/>
-                                    <GradientStop Color="#110f10" Offset="1.0"/>
-                                </LinearGradientBrush>
-                            </Frame.Background>
-                        </Frame>
-                    </Grid>
-                    <StackLayout Margin="0,50,0,0"
-                             Padding="16,0"
-                             Spacing="16">
-                        <Grid ColumnDefinitions="*,*">
-                            <Label Text="Good morning" 
-                                   Style="{StaticResource HeaderLabel}"/>
-                            <StackLayout Grid.Column="1"
-                                     VerticalOptions="Start"
-                                     Orientation="Horizontal"
-                                     Spacing="16"
-                                     Margin="0,4,32,0"
-                                     HorizontalOptions="End">
-                                <Image>
-                                    <Image.Source>
-                                        <FontImageSource Color="White" 
-                                                 Size="28" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.BellOutline}"/>
-                                    </Image.Source>
-                                </Image>
-                                <Image>
-                                    <Image.Source>
-                                        <FontImageSource Color="White" 
-                                                 Size="25" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.ClockOutline}"/>
-                                    </Image.Source>
-                                </Image>
-                                <Image>
-                                    <Image.Source>
-                                        <FontImageSource Color="White" 
-                                                 Size="25" 
-                                                 FontFamily="MdIcons"
-                                                 Glyph="{x:Static local:FontIcons.CogOutline}"/>
-                                    </Image.Source>
-                                </Image>
-                            </StackLayout>
-                        </Grid>
-                        <CollectionView ItemsSource="{Binding Recents}">
-                            <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Vertical"
-                                             Span="2"
-                                             HorizontalItemSpacing="8"
-                                             VerticalItemSpacing="8"/>
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:RecentItemView/>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                        <StackLayout Orientation="Horizontal" 
-                                 Spacing="8"
-                                 Margin="0,24,0,12">
-                            <Image Source="https://i.scdn.co/image/ab6761610000f1787440170c0628c2945da819c3">
-                                <Image.Clip>
-                                    <EllipseGeometry RadiusX="70"
-                                                 RadiusY="70"
-                                                 Center="70,70" />
-                                </Image.Clip>
+            <ScrollView Margin="0,0,0,72">
+                <Grid
+                    RowDefinitions="Auto,175,Auto,Auto,Auto,Auto"
+                    Margin="0,42,0,0"
+                    Padding="16,0"
+                    VerticalOptions="FillAndExpand"
+                    RowSpacing="24">
+                    <Grid ColumnDefinitions="*,*"
+                            RowDefinitions="*,*"
+                            RowSpacing="24">
+                        <Label Text="Good morning" 
+                                Style="{StaticResource HeaderLabel}"/>
+                        <StackLayout Grid.Column="1"
+                                    VerticalOptions="Start"
+                                    Orientation="Horizontal"
+                                    Spacing="24"
+                                    Margin="0,4,0,0"
+                                    HorizontalOptions="End">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="White" 
+                                                Size="28" 
+                                                FontFamily="MdIcons"
+                                                Glyph="{x:Static local:FontIcons.BellOutline}"/>
+                                </Image.Source>
                             </Image>
-                            <StackLayout Spacing="-5">
-                                <Label Text="NEW RELEASE" Style="{StaticResource GrayContentLabel}"/>
-                                <Label Text="Scorpions" Style="{StaticResource HeaderLabel}"/>
-                            </StackLayout>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="White" 
+                                                Size="25" 
+                                                FontFamily="MdIcons"
+                                                Glyph="{x:Static local:FontIcons.ClockOutline}"/>
+                                </Image.Source>
+                            </Image>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="White" 
+                                                Size="25" 
+                                                FontFamily="MdIcons"
+                                                Glyph="{x:Static local:FontIcons.CogOutline}"/>
+                                </Image.Source>
+                            </Image>
                         </StackLayout>
-                        <StackLayout Spacing="12"
+                        <HorizontalStackLayout Grid.Row="1" Spacing="12">
+                            <Border BackgroundColor="#FF2A2A2A"
+                                    Padding="12,8">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="18" StrokeThickness="0" />
+                                </Border.StrokeShape>
+                                <Label Text="Music" 
+                                        Style="{StaticResource GrayContentLabel}" 
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="White"/>
+                            </Border>
+                            <Border BackgroundColor="#FF2A2A2A"
+                                    Padding="12,8">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="18" StrokeThickness="0" />
+                                </Border.StrokeShape>
+                                <Label Text="Podcasts And Shows" 
+                                        Style="{StaticResource GrayContentLabel}" 
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        TextColor="White"/>
+                            </Border>
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <CollectionView Grid.Row="1"
+                                    ItemsSource="{Binding Recents}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical"
+                                            Span="2"
+                                            HorizontalItemSpacing="8"
+                                            VerticalItemSpacing="8"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <templates:RecentItemView HeightRequest="50"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <StackLayout Grid.Row="2"
+                                 Orientation="Horizontal" 
+                                 Spacing="8"
+                                 Margin="0,18">
+                        <Border HeightRequest="55"
+                                WidthRequest="55"
+                                StrokeShape="RoundRectangle 30"
+                                Margin="0">
+                            <Grid>
+                                <Image Aspect="AspectFit"
+                                       Source="https://i.scdn.co/image/ab6761610000f1787440170c0628c2945da819c3"/>
+                            </Grid>
+                        </Border>
+
+                        <StackLayout Spacing="-5">
+                            <Label Text="NEW RELEASE" Style="{StaticResource GrayContentLabel}"/>
+                            <Label Text="Scorpions" Style="{StaticResource HeaderLabel}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3"
+                                 Spacing="12"
                                  Margin="0,12">
-                            <Label Text="Recently played" Style="{StaticResource HeaderLabel}"/>
-                            <CollectionView ItemsSource="{Binding Playlists}">
-                                <CollectionView.ItemsLayout>
-                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <templates:PlaylistItemView/>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                        <StackLayout Spacing="12"
+                        <Label Text="Recently played" Style="{StaticResource HeaderLabel}"/>
+                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Playlists}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:PlaylistItemView Margin="0,0,12,0"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4"
+                                 Spacing="12"
                                  Margin="0,12">
-                            <Label Text="Get back your music" Style="{StaticResource HeaderLabel}"/>
-                            <CollectionView ItemsSource="{Binding Songs}">
-                                <CollectionView.ItemsLayout>
-                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <templates:SongItemView/>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                        <StackLayout Spacing="12"
+                        <Label Text="Get back your music" Style="{StaticResource HeaderLabel}"/>
+                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Songs}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:SongItemView Margin="0,0,12,0"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="5"
+                                 Spacing="12"
                                  Margin="0,12">
-                            <Label Text="Trending for you"
-                               LineBreakMode="TailTruncation"
-                               Style="{StaticResource HeaderLabel}"/>
-                            <CollectionView ItemsSource="{Binding Albums}">
-                                <CollectionView.ItemsLayout>
-                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <templates:AlbumItemView/>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </StackLayout>                    
-                </Grid>
+                        <Label Text="Trending for you"
+                            LineBreakMode="TailTruncation"
+                            Style="{StaticResource HeaderLabel}"/>
+                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Albums}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:AlbumItemView Margin="0,0,12,0"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </Grid>                    
             </ScrollView>
             <controls:PlayerControl VerticalOptions="EndAndExpand"
                                     Margin="12,0"/>            

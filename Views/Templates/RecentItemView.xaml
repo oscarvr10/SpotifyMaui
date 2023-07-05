@@ -2,11 +2,10 @@
 <Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       x:Class="SpotifyMaui.Views.Templates.RecentItemView">
-    <Frame BackgroundColor="{StaticResource DarkGrayColor}"
-           CornerRadius="4"
+    <Border BackgroundColor="{StaticResource DarkGrayColor}"
+           StrokeShape="RoundRectangle 4"
            Padding="0">
-        <StackLayout Orientation="Horizontal"
-                     Spacing="8">
+        <HorizontalStackLayout Spacing="8">
             <Image Source="{Binding PathImage}"
                    WidthRequest="58"
                    HeightRequest="58"/>
@@ -16,6 +15,6 @@
                    WidthRequest="90"
                    MaxLines="2"          
                    VerticalOptions="Center"/>
-        </StackLayout>
-    </Frame>
+        </HorizontalStackLayout>
+    </Border>
 </Grid>

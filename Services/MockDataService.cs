@@ -13,7 +13,7 @@ namespace SpotifyMaui.Services
                 new Playlist(){ Name="Funk Rock", NrOfFollowers=49205, Editor="Spotify", ImageUrl="https://i.scdn.co/image/a9cdead5cf5d85a33e7bc12b49d1006821650ca4"},
                 new Playlist(){ Name="Peaceful Indie Ambient", NrOfFollowers=5025, Editor="Spotify", ImageUrl="https://i.scdn.co/image/67c7e274072d3a4eef1fd1e95622b0a30f0285a3"},
                 new Playlist(){ Name="This Is: Muse", NrOfFollowers=2140415, Editor="Spotify", ImageUrl="https://i.scdn.co/image/3770c6d556b864e60684d0706013ff08dac76918"},
-                new Playlist(){ Name="100% Scooter", NrOfFollowers=7447, Editor="Spotify", ImageUrl="https://www.geek.com/wp-content/uploads/2015/11/dirty-dubstep-dangle.jpeg"},
+                new Playlist(){ Name="100% Scooter", NrOfFollowers=7447, Editor="Spotify", ImageUrl="https://seeded-session-images.scdn.co/v1/img/artist/0HlxL5hisLf59ETEPM3cUA/en"},
                 new Playlist(){ Name="Feeling Good, Feeling Great", NrOfFollowers=250211, Editor="Spotify", ImageUrl="https://i.scdn.co/image/9c003edf2bcc3386c400d087b3bb4adb75ee1f5a"},
             };
         }
