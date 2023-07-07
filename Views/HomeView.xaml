@@ -17,7 +17,7 @@
                 <Grid
                     Margin="0,42,0,0"
                     Padding="16,0"
-                    RowDefinitions="Auto,175,Auto,Auto,Auto,Auto"
+                    RowDefinitions="Auto,180,Auto,Auto,Auto,Auto"
                     RowSpacing="24"
                     VerticalOptions="FillAndExpand">
                     <Grid
@@ -126,26 +126,30 @@
                         Margin="0,12"
                         Spacing="12">
                         <Label Style="{StaticResource HeaderLabel}" Text="Recently played" />
-                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Playlists}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:PlaylistItemView Margin="0,0,12,0" />
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </HorizontalStackLayout>
+                        <ScrollView Orientation="Horizontal">
+                            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Playlists}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <templates:PlaylistItemView Margin="0,0,12,0" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </HorizontalStackLayout>
+                        </ScrollView>
                     </StackLayout>
                     <StackLayout
                         Grid.Row="4"
                         Margin="0,12"
                         Spacing="12">
                         <Label Style="{StaticResource HeaderLabel}" Text="Get back your music" />
-                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Songs}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:SongItemView Margin="0,0,12,0" />
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </HorizontalStackLayout>
+                        <ScrollView Orientation="Horizontal">
+                            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Songs}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <templates:SongItemView Margin="0,0,12,0" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </HorizontalStackLayout>
+                        </ScrollView>                        
                     </StackLayout>
                     <StackLayout
                         Grid.Row="5"
@@ -155,13 +159,15 @@
                             LineBreakMode="TailTruncation"
                             Style="{StaticResource HeaderLabel}"
                             Text="Trending for you" />
-                        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Albums}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <templates:AlbumItemView Margin="0,0,12,0" />
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </HorizontalStackLayout>
+                        <ScrollView Orientation="Horizontal">
+                            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Albums}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <templates:AlbumItemView Margin="0,0,12,0" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </HorizontalStackLayout>
+                        </ScrollView>
                     </StackLayout>
                 </Grid>
             </ScrollView>
