@@ -126,7 +126,7 @@
                         Margin="0,12"
                         Spacing="12">
                         <Label Style="{StaticResource HeaderLabel}" Text="Recently played" />
-                        <ScrollView Orientation="Horizontal">
+                        <!--<ScrollView Orientation="Horizontal">
                             <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Playlists}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
@@ -134,14 +134,24 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </HorizontalStackLayout>
-                        </ScrollView>
+                        </ScrollView>-->
+                        <CollectionView ItemsSource="{Binding Playlists}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:PlaylistItemView Margin="0,0,12,0" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                     </StackLayout>
                     <StackLayout
                         Grid.Row="4"
                         Margin="0,12"
                         Spacing="12">
                         <Label Style="{StaticResource HeaderLabel}" Text="Get back your music" />
-                        <ScrollView Orientation="Horizontal">
+                        <!--<ScrollView Orientation="Horizontal">
                             <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Songs}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
@@ -149,7 +159,17 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </HorizontalStackLayout>
-                        </ScrollView>                        
+                        </ScrollView>-->
+                        <CollectionView ItemsSource="{Binding Songs}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:SongItemView Margin="0,0,12,0" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                     </StackLayout>
                     <StackLayout
                         Grid.Row="5"
@@ -159,7 +179,7 @@
                             LineBreakMode="TailTruncation"
                             Style="{StaticResource HeaderLabel}"
                             Text="Trending for you" />
-                        <ScrollView Orientation="Horizontal">
+                        <!--<ScrollView Orientation="Horizontal">
                             <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Albums}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
@@ -167,7 +187,17 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </HorizontalStackLayout>
-                        </ScrollView>
+                        </ScrollView>-->
+                        <CollectionView ItemsSource="{Binding Albums}">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <templates:AlbumItemView Margin="0,0,12,0" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                     </StackLayout>
                 </Grid>
             </ScrollView>
